@@ -10,7 +10,7 @@ int x;
 int s;
 for (x = 0 ; x <= 9 ; x++)
 {
-for (s = 1 ; s <= 9 ; s++)
+for (s = 0 ; s <= 9 ; s++)
 {
 putchar('0' + x);
 putchar('0' + s);
