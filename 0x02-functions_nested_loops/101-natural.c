@@ -1,19 +1,24 @@
 #include <stdio.h>
 /**
- * main - Get the sum of mutliples of 3 or 5 until 1024.
+ * main - Prints Alphabet
  *
- * Return: Always 0.
+ * Description: Prints alphabet in lowercase.
+ * It's neccesary  strcpy for copy de char array
+ * Return: Return 1 for letters, 0 otherwise
  */
-
 int main(void)
 {
-int i;
-int sum = 0;
-for (i = 0; i < 10; i++)
+int n, j, result;
+j = 1;
+result = 0;
+n = 1024;
+for (j = 0 ; j  < n ; j++)
 {
-if (i % 3 == 0  || i % 5 == 0)
-sum += i;
+if (j % 3 == 0 || j % 5 == 0)
+{
+result += j;
 }
-printf("%d\n", sum);
+}
+printf("%i\n", result);
 return (0);
 }
