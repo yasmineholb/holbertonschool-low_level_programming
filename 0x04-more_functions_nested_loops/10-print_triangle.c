@@ -12,7 +12,7 @@ _putchar('\n');
 while (size > 0)
 {
 for (i = 0; i < j; i++)
-_putchar((i < size - 1) ? '.' : '#');
+_putchar((i < size - 1) ? ' ' : '#');
 _putchar('\n');
 size--;
 }
