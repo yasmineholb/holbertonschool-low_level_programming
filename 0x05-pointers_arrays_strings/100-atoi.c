@@ -4,6 +4,7 @@
 /**
 *_atoi - function that converts
 *@s:pointer
+*Return: int
 */
 int _atoi(char *s)
 {
@@ -30,6 +31,6 @@ n = n * 10 - (s[i] - '0');
 i++;
 }
 }
-j = j * -1;
-return (n * j);
+j = j * (-1);
+return (n *j);
 }
