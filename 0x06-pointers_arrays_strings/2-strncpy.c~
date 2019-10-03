@@ -1,0 +1,17 @@
+#include "holberton.h"
+#include <stdio.h>
+/**
+ * *_strncpy - function
+ *@dest: pointer
+ *@src: pointer
+ */
+char *_strncpy(char *dest, char *src, int n)
+{
+int i=0;
+while(*(src+i) <= n)
+{
+dest[i] = src[i];
+i++;
+}
+return (dest);	       
+}
