@@ -1,0 +1,22 @@
+#include "holberton.h"
+#include <stdio.h>
+/**
+ * *_strcat - function
+ *@dest: pointer
+ *@src: pointer
+ *Return: char
+ */
+char *_strcat(char *dest, char *src)
+{
+int i, j;
+i = 0;
+j = 0;
+while (*(dest + i))
+i++;
+while ((*(dest + i) = *(src + j)))
+{
+i++;
+j++;
+}
+return (dest);
+}
