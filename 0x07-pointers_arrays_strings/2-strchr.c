@@ -8,15 +8,14 @@
  */
 char *_strchr(char *s, char c)
 {
-char *found = NULL;
 while (*s != '\0')
 {
 if (*s == c)
-{
-found = s;
-break;
-}
+return (s);
 s++;
 }
-return (found);
+if (*s == c)
+return (s);
+else
+return (NULL);
 }
