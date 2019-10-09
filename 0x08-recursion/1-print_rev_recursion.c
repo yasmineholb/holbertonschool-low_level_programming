@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-*_puts_recursion -Function
+*_print_rev_recursion -Function
 *@s: parametre
 * Return: Void
 */
