@@ -1,0 +1,22 @@
+#include "holberton.h"
+/**
+*_puts_recursion -Function
+*@s: parametre
+* Return: Void
+*/
+void _print_rev_recursion(char *s)
+{
+ char c;
+ char  begin = s[0];
+  char end = *s;
+ if (begin >= end)
+  return;
+ 
+   c          = *(s+begin);
+   *(s+begin) = *(s+end);
+   *(s+end)   = c;
+ 
+   _print_rev_recursion(s);
+
+
+}
