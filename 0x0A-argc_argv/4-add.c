@@ -11,6 +11,8 @@ int main(int argc, char **argv)
 {
 int res = 0;
 int i;
+if (argc < 1)
+printf "%d\n", 0);
 for (i = 1; i < argc; i++)
 {
 if (!atoi(argv[i]))
