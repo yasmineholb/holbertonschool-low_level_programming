@@ -4,16 +4,16 @@
 /**
  **str_concat- Function
  *@s1: char
- *@s2: char 
+ *@s2: char
  * Return: char
  */
 char *str_concat(char *s1, char *s2)
 {
- unsigned int k, m, j = 0, i = 0;
+unsigned int k, m, j = 0, i = 0;
 char *ch;
 if ((s1 == NULL) && (s2 == NULL))
 return ("");
- while (s1[i] != '\0' && s2[j] != '\0')
+while (s1[i] != '\0' && s2[j] != '\0')
 i++;
 j++;
 ch = malloc(((i + j + 1) * sizeof(char)));
@@ -31,5 +31,5 @@ m++;
 k++;
 }
 ch[k] = '\0';
-return(ch);
+return (ch);
 }

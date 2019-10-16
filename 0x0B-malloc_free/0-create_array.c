@@ -12,7 +12,7 @@ char *create_array(unsigned int size, char c)
 unsigned int i = 0;
 char *tab;
 if (size == 0)
-return(NULL);
+return (NULL);
 tab = malloc(size * sizeof(char));
 if (tab == NULL)
 return (NULL);
@@ -21,5 +21,5 @@ while (i < size)
 tab[i] = c;
 i++;
 }
-return(tab);
+return (tab);
 }
