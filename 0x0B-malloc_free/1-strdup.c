@@ -2,7 +2,7 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- **_strdup - Function
+ **_strdup - Function strdup
  *@str: char
  * Return: char
  */
