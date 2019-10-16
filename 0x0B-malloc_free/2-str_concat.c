@@ -11,7 +11,7 @@ char *str_concat(char *s1, char *s2)
 {
 unsigned int k, m, j = 0, i = 0;
 char *ch;
-if ((s1 == NULL) && (s2 == NULL))
+if ((s1 == NULL) || (s2 == NULL))
 return ("");
 while (s1[i] != '\0' && s2[j] != '\0')
 i++;
