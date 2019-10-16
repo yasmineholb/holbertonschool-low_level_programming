@@ -15,9 +15,14 @@ if (s1 == NULL)
 s1 = "";
 if (s2 == NULL)
 s2 = "";
-while (s1[i] != '\0' && s2[j] != '\0')
+while (s1[i] != '\0')
+{
 i++;
+}
+while (s2[j] != '\0')
+{
 j++;
+}
 ch = malloc(((i + j + 1) * sizeof(char)));
 if (ch == NULL)
 {
