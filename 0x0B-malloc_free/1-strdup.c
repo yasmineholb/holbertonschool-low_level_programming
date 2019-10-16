@@ -15,6 +15,10 @@ return (NULL);
 while (str[i] != '\0')
 i++;
 ch = malloc((i *sizeof(char)) + 1);
+if (ch == NULL)
+{
+return (NULL);
+}
 j = 0;
 while (str[j] != '\0')
 {
