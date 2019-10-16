@@ -2,12 +2,11 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- **str_concat- Function
- *@s1: char
- *@s2: char
+ **_strdup - Function
+ *@str: char
  * Return: char
  */
-char *str_concat(char *s1, char *s2)
+char *_strdup(char *str)
 {
 unsigned int j, i = 0;
 char *ch;
