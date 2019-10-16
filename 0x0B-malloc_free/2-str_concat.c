@@ -19,6 +19,10 @@ while (s1[i] != '\0' && s2[j] != '\0')
 i++;
 j++;
 ch = malloc(((i + j + 1) * sizeof(char)));
+if (ch == NULL)
+{
+return (NULL);
+}
 m = 0;
 k = 0;
 while (s1[k] != '\0')
