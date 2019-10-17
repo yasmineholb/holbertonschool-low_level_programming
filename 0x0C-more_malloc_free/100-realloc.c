@@ -4,20 +4,32 @@
 #include <limits.h>
 /**
  **_realloc - Function
- *@min: int 
- *@max: max
- * Return: int
+ *@ptr: int
+ *@old_size: int
+ *@new_size: int
+ * Return: void
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-if (new_size == old_size)
-return (ptr);
-ptr = realloc (ptr, new_size)
-if (new_size == 0) && (ptr != NULL)
+char *c;
+unsigned int i;
+if (ptr == NULL)
+{
+c = malloc(new_size);
+return (c);
+}
+if (new_size == 0)
+{
 free(ptr);
 return (NULL);
-if ptr == NULL
-return (malloc(new_size))
-
+}
+if (old_size == new_size)
+return (ptr);
+c = malloc(new_size);
+if (c == NULL)
+return (NULL);
+for (i = 0; i < old_size && i < new_size; i++)
+c[i] = ((char *)ptr)[i];
 free(ptr);
+return (c);
 }
