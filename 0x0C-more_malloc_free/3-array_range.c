@@ -4,7 +4,7 @@
 #include <limits.h>
 /**
  **array_range - Function
- *@min: int 
+ *@min: int
  *@max: max
  * Return: int
  */
@@ -14,12 +14,12 @@ int i;
 int *tab;
 if (min > max)
 return (NULL);
-tab = malloc((max - min) *sizeof(int));
+tab = malloc((max - min + 1) * sizeof(int));
 if (tab == NULL)
 {
 return (NULL);
 }
-for (i = min; i < max; i++)
+for (i = min; i <= max; i++)
 {
 tab[i] = i;
 }
