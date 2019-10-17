@@ -16,7 +16,6 @@ if (c == NULL)
 {
 exit(98);
 }
-return(c);
-}       
-   
+return (c);
+}
 
