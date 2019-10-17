@@ -19,9 +19,9 @@ if (tab == NULL)
 {
 return (NULL);
 }
-for (i = min; i <= max; i++)
+for (i = 0; min <= max; i++, min++)
 {
-tab[i] = i;
+tab[i] = min;
 }
 return (tab);
 }
