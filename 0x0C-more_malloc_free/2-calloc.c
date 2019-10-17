@@ -10,20 +10,18 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
+char *p;
 unsigned int i;
-char *tab;
-void *p;
-if (size == 0 || nmemb == 0)
+void *ch;
+if (nmemb <= 0 || size <= 0)
 return (NULL);
-p = malloc(size * nmemb);
-if (p == NULL)
+p = malloc(nmemb * size);
+ch = p;
+if (p == 0)
 {
 return (NULL);
 }
-tab = p;
-for (i = 0; i < nmemb; i++)
-{
-tab[i] = 0;
-}
-return (tab);
+for (i = 0; i < (nmemb * size); i++)
+p[i] = 0;
+return (ch);
 }
