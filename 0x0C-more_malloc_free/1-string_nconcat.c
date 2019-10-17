@@ -1,61 +1,39 @@
 #include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
 /**
  **string_nconcat - Function
- *@s1: 
- *@s2:
- *@n:
+ *@s1: char
+ *@s2: char
+ *@n: int
  * Return: char
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-unsigned int t, k, m, j = 0, i = 0;
 char *ch;
+int i;
+unsigned int j;
 if (s1 == NULL)
 s1 = "";
 if (s2 == NULL)
 s2 = "";
+i = 0;
+while (s1[i] != '\0')
+i++;
+ch = malloc(sizeof(char) * (i + n + 1));
+if (ch == NULL)
+return (NULL);
+i = j = 0;
 while (s1[i] != '\0')
 {
+ch[i] = s1[i];
 i++;
 }
-while (s2[j] != '\0')
+while (j < n && s2[j] != '\0')
 {
-j++;
-t = j;
+ch[i] = s2[j];
+i++, j++;
 }
-ch = malloc(((i + j + 1) * sizeof(char)));
-if (ch == NULL)
-{
-return (NULL);
-}
-m = 0;
-k = 0;
-while (s1[k] != '\0')
-{
-ch[k] = s1[k];
-k++;
-}
-if (n < t)
-{
-while (s2[m] != s2[n+1])
-{
-ch[k] = s2[m];
-m++;
-k++;
-}
-}
-else
-{
-while (s2[m] != '\0')
-{
-ch[k] = s2[m];
-m++;
-k++;
-}
-}
-ch[k] = '\0';
+ch[i] = '\0';
 return (ch);
 }
