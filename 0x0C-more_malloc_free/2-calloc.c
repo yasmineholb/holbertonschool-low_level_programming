@@ -3,11 +3,10 @@
 #include <stdlib.h>
 #include <limits.h>
 /**
- **string_nconcat - Function
- *@s1: 
- *@s2:
- *@n:
- * Return: char
+ **_calloc - Function
+ *@nmemb: int
+ *@size: int
+ * Return: void
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
@@ -20,7 +19,7 @@ if (tab == NULL)
 {
 return (NULL);
 }
-for (i = 0;i < nmemb; i++)
+for (i = 0; i < nmemb; i++)
 {
 tab[i] = 0;
 }
