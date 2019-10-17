@@ -1,0 +1,19 @@
+#include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+
+/**
+ * *malloc_checked - Function
+ *@b: int
+ * Return: void.
+ */
+void *malloc_checked(unsigned int b)
+{
+unsigned int *c;
+ c = malloc(b *sizeof(int));
+if (c == NULL)
+printf("98");
+}       
+   
+
