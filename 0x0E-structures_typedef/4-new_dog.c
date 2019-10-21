@@ -18,7 +18,7 @@ while (name[i++] != '\0')
 ;
 while (owner[j++] != '\0')
 ;
-dog1 = (dog1 *) malloc(sizeof(dog_t));
+dog1 = (dog_t *)malloc(sizeof(dog_t));
 if (dog1 == NULL)
 {
 return (NULL);
