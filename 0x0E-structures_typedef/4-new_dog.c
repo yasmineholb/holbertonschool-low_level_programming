@@ -20,17 +20,27 @@ while (owner[j] != '\0')
 j++;
 dog1 = malloc(sizeof(dog_t));
 if (dog1 == NULL)
+{
 return (NULL);
+}
 dog1->name = malloc(i *sizeof(dog1->name));
 if (dog1 == NULL)
+{
 return (NULL);
+}
 for (k = 0; k < i; k++)
+{
 dog1->name[k] = name[k];
+}
 dog1->age = age;
 dog1->owner = malloc(j *sizeof(dog1->owner));
 if (dog1 == NULL)
+{
 return (NULL);
+}
 for (k = 0; k < j; k++)
+{
 dog1->owner[k] = owner[k];
+}
 return (dog1);
 }
