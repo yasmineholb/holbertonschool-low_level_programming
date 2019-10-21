@@ -24,7 +24,7 @@ if (dog1 == NULL)
 return (NULL);
 }
 dog1->name = malloc(i * sizeof(dog1->name));
-if (dog1 == NULL)
+if (dog1->name == NULL)
 {
 return (NULL);
 }
@@ -34,7 +34,7 @@ dog1->name[k] = name[k];
 }
 dog1->age = age;
 dog1->owner = malloc(j * sizeof(dog1->owner));
-if (dog1 == NULL)
+if (dog1->owner == NULL)
 {
 return (NULL);
 }
