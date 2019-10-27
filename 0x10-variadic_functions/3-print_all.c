@@ -72,15 +72,13 @@ i = 0;
 while (format != NULL && format[i] != '\0')
 {
 j = 0;
-while (types[j].type)
-{
-if (format[i] == *(types[j].type))
+while (j < 4 && (*(format + i) != *(types[j].type)))
+j++;
+if (j < 4)
 {
 printf("%s", sep);
-(types[j].fn)(arg1);
+types[j].fn(arg1);
 sep = ", ";
-}
-j++;
 }
 i++;
 }
