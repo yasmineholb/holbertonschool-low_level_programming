@@ -69,7 +69,7 @@ type1 types[] = {
 };
 va_start(arg1, format);
 i = 0;
-while (format && format[i])
+while (format != NULL && format[i] != '\0')
 {
 j = 0;
 while (types[j].type)
