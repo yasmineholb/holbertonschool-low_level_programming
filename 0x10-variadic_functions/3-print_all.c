@@ -43,11 +43,7 @@ void print_string(va_list ap)
 {
 char *c;
 c = va_arg(ap, char *);
-if (c == NULL)
-{
-printf("(nil)");
-}
-printf("%s", c);
+c == NULL ? printf("(nil)") : printf("%s", c);
 }
 
 /**
@@ -60,7 +56,7 @@ void print_all(const char * const format, ...)
 {
 va_list arg1;
 char *sep = "";
-int i, j;
+int i = 0, j;
 type1 types[] = {
 {"c", print_char},
 {"i", print_integer},
@@ -68,7 +64,6 @@ type1 types[] = {
 {"s", print_string}
 };
 va_start(arg1, format);
-i = 0;
 while (format != NULL && format[i] != '\0')
 {
 j = 0;
