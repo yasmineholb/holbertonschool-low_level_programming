@@ -4,19 +4,21 @@
 #include "lists.h"
 
 /**
- * print_list - check the code for Holberton School students.
+ * print_list - fn
  *@h: param
  * Return: Always 0.
  */
 size_t print_list(const list_t *h)
 {
-size_t k = 0;
-while (h !=  NULL)
+const list_t *ch;
+int o;
+o = 0;
+ch = h;
+while (ch != NULL)
 {
-printf("[%d] %s\n", h->len, h->str);
-h = h->next;
-k++;
+printf("[%d] %s\n", ch->len, ch->str);
+ch = ch->next;
+o++;
 }
-return (k);
+return (o);
 }
-
