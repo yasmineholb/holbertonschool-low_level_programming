@@ -1,0 +1,29 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
+#include <string.h>
+/**
+ * list_t - fn
+ *@head: param
+ *@str: param
+ * Return: Always 0.
+ */
+list_t *add_node(list_t **head, const char *str)
+{
+list_t *m;
+int i;
+m = malloc(sizeof(list_t));
+if (m == NULL)
+{
+return (NULL);
+}
+i = 0;
+while (str[i] != '\0')
+i++;
+m->len = i;
+m->str = strdup(str);
+m->next = *head;
+*head = m;
+return (*head);
+}
