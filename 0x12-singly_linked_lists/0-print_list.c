@@ -10,19 +10,15 @@
  */
 size_t print_list(const list_t *h)
 {
-const list_t *ch;
-int o;
-o = 0;
-ch = h;
-if (h == NULL)
+list_t *s;
+size_t k = 0;
+for (s = (list_t *)h; s != NULL; s = s->next)
 {
-return (-1);
+if (s->str)
+printf("[%u] %s\n", s->len, s->str);
+else
+printf("[0] (nil)\n");
+k++;
 }
-while (ch != NULL)
-{
-printf("[%d] %s\n", ch->len, ch->str);
-ch = ch->next;
-o++;
-}
-return (o);
+return (k);
 }
