@@ -14,6 +14,10 @@ const list_t *ch;
 int o;
 o = 0;
 ch = h;
+if (h == NULL)
+{
+return (-1);
+}
 while (ch != NULL)
 {
 printf("[%d] %s\n", ch->len, ch->str);
