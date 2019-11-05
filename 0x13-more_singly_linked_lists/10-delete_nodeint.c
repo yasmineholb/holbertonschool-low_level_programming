@@ -5,8 +5,7 @@
 /**
  *delete_nodeint_at_index - fn
  *@head: param
- *@idx: param
- *@n: param
+ *@index: param
  * Return: Always 0.
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
@@ -14,26 +13,24 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 listint_t *m, *n;
 unsigned int i;
 n = *head;
-if (*head == NULL || head == NULL)
+if (*head == NULL)
 return (-1);
 if (index == 0)
 {
 (*head) = (*head)->next;
 free(n);
- return (1);
+return (1);
 }
- i = 0;
- while (i < (index - 1))
+i = 0;
+while (i < (index - 1))
 {
-
 if (n == NULL)
 return (-1);
-n = n->next;  
+n = n->next;
 i++;
 }
 m = n->next;
 n->next = m->next;
 free(m);
-
 return (1);
 }
