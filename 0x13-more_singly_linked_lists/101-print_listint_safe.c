@@ -4,7 +4,7 @@
 #include "lists.h"
 /**
  * print_listint_safe - fn
- *@head: param
+ *@h: param
  * Return: Always 0.
  */
 size_t print_listint_safe(const listint_t *h)
