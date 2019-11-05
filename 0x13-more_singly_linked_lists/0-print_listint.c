@@ -10,17 +10,14 @@
  */
 size_t print_listint(const listint_t *h)
 {
-listint_t *t;
-size_t k = 0;
-if (!h)
-return (0);
-for (t = (listint_t *)h; t != NULL; t = t->next)
+size_t k = 0, m = 0;
+if (h == NULL)
+return (m);
+while (h != NULL)
 {
-if (t->n)
-printf("%u\n", t->n);
-else
-printf("0");
+printf("%d\n", h->n);
 k++;
+h = h->next;
 }
 return (k);
 }
