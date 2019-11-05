@@ -22,22 +22,23 @@ m->n = n;
 p = *head;
 if (idx == 0)
 {
-m->next = (*head)->next;
-(*head)->next = m;
+m->next = *head;
+*head = m;
 return (m);
 }
-while (p && (i != idx))
+while (p)
 {
-p = p->next;
-i++;
-if (p == NULL)
-return (NULL);
 if (i == idx - 1)
 {
 m->next = p->next;
 p->next = m;
+break;
+}
+p = p->next;
+i++;
+if (p == NULL)
+return (NULL);
+}
 return (m);
 }
-}
-return (m);
-}
+
