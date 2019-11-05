@@ -4,8 +4,8 @@
 #include "lists.h"
 
 /**
- * main - check the code for Holberton School students.
- *
+ * free_listint2 - fn
+ *@head: param
  * Return: Always 0.
  */
 void free_listint2(listint_t **head)
