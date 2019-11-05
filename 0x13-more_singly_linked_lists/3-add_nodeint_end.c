@@ -3,14 +3,14 @@
 #include <stdio.h>
 #include "lists.h"
 /**
- * main - check the code for Holberton School students.
- *
+ * add_nodeint_end - fn
+ *@head: param
+ *@n: param
  * Return: Always 0.
  */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
 listint_t *m, *i;
-
 m = malloc(sizeof(listint_t));
 if (m == NULL)
 {
