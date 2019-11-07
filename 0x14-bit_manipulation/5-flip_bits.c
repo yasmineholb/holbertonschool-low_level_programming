@@ -4,9 +4,9 @@
 #include <math.h>
 #include <stdlib.h>
 /**
- *clear_bit - fn
+ *flip_bits - fn
  *@n: param
- *@index: param
+ *@m: param
  * Return: Always 0.
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
@@ -14,13 +14,12 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 unsigned long int i;
 unsigned int j;
 i = n ^ m;
-while (i)
+j = 0;
+while (i > 0)
 {
 if (n & 1)
-{
 j++;
+i >>= 1;
 }
-n >>=1;
-}
- return (i); 
+return (j); 
 }
