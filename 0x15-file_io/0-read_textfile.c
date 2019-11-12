@@ -1,60 +1,43 @@
-#include <stdio.h>
-#include "holberton.h"
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/uio.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
-
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * read_textfile - fn
+ * @filename: param
+ * @letters: param
+ * Return: int 
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
-	ssize_t r, w;
-	char *buf;
-
-	if (!filename)
-		return (0);
-
-	/* opens file with read + write permissions and checks for error */
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
-		return (0);
-
-	/* allocates buffer of size letters and checks for error */
-	buf = malloc(letters * sizeof(char));
-	if (!buf)
-		return (0);
-
-	/* reads text into buffer from file and checks for error */
-	r = read(fd, buf, letters);
-	if (r == -1)
-	{
-		free(buf);
-		return (0);
-	}
-
-	close(fd);
-
-	/* write to stdout from buffer and checks for error */
-	w = write(STDOUT_FILENO, buf, r);
-	if (w == -1)
-	{
-		free(buf);
-		return (0);
-	}
-
-	/* checks if write wrote the expected amount of bytes */
-	if (w < r)
-	{
-		free(buf);
-		return (0);
-	}
-	free(buf);
-	return (w);
+  int i, j = 0, k = 0;
+char *temp_b;
+if (filename == NULL)
+return (0);
+temp_b = malloc(sizeof(char) * letters);
+if (!temp_b)
+return (0);
+ i = -1;
+i = open(filename, O_RDONLY);
+if (i < 0)
+{
+free(temp_b);
+return (0);
+}
+j = read(i, temp_b, letters);
+if (j < 0)
+{
+free(temp_b);
+return (0);
+}
+while (temp_b && temp_b[k])
+k++;
+j = write(STDOUT_FILENO, temp_b, k);
+free(temp_b);
+close(i);
+if (j < 0)
+return (0);
+return ((ssize_t)j);
 }
