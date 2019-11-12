@@ -13,40 +13,32 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-int fd;
-ssize_t err, n;
-char *buf;
-buf = malloc(sizeof(*buf) * letters);
-if (buf == NULL)
-return (0);
+ssize_t i, j = 0, k = 0;
+char *f;
 if (filename == NULL)
 return (0);
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
-	{
-		free(buf);
-		return (0);
-	}
-
-	n = read(fd, buf, letters);
-	if (n == -1)
-	{
-		free(buf);
-		return (0);
-	}
-	if (n > 0)
-		err = write(STDOUT_FILENO, buf, n);
-	if (err < n)
-	{
-		free(buf);
-		return (0);
-	}
-	err = close(fd);
-	if (err == -1)
-	{
-		free(buf);
-	 return (0);
-	}
-free(buf);
-return (n);
+f = malloc(sizeof(char) * letters);
+if (f == NULL)
+return (0);
+ i = -1;
+i = open(filename, O_RDONLY);
+if (i < 0)
+{
+free(f);
+return (0);
+}
+j = read(i, f, letters);
+if (j < 0)
+{
+free(f);
+return (0);
+}
+while (f && f[k])
+k++;
+j = write(STDOUT_FILENO, f, k);
+free(f);
+close(i);
+if (j < 0)
+return (0);
+return ((ssize_t)j);
 }
