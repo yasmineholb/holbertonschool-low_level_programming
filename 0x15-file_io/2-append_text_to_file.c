@@ -1,5 +1,8 @@
 #include "holberton.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
 /**
  * append_text_to_file - fn
  * @filename: param
@@ -18,7 +21,7 @@ return (-1);
 if (text_content == NULL)
 return (1);
 n = 0;
-while (text_content[i] != '\0')
+while (text_content[n] != '\0')
 n++;
 k = write(m, text_content, n);
 if (k == -1)
