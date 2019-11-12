@@ -13,32 +13,40 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-  int i, j = 0, k = 0;
-char *temp_b;
+int fd;
+ssize_t err, n;
+char *buf;
+buf = malloc(sizeof(*buf) * letters);
+if (buf == NULL)
+return (0);
 if (filename == NULL)
 return (0);
-temp_b = malloc(sizeof(char) * letters);
-if (!temp_b)
-return (0);
- i = -1;
-i = open(filename, O_RDONLY);
-if (i < 0)
-{
-free(temp_b);
-return (0);
-}
-j = read(i, temp_b, letters);
-if (j < 0)
-{
-free(temp_b);
-return (0);
-}
-while (temp_b && temp_b[k])
-k++;
-j = write(STDOUT_FILENO, temp_b, k);
-free(temp_b);
-close(i);
-if (j < 0)
-return (0);
-return ((ssize_t)j);
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
+	{
+		free(buf);
+		return (0);
+	}
+
+	n = read(fd, buf, letters);
+	if (n == -1)
+	{
+		free(buf);
+		return (0);
+	}
+	if (n > 0)
+		err = write(STDOUT_FILENO, buf, n);
+	if (err < n)
+	{
+		free(buf);
+		return (0);
+	}
+	err = close(fd);
+	if (err == -1)
+	{
+		free(buf);
+	 return (0);
+	}
+free(buf);
+return (n);
 }
