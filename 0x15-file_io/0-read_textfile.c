@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include "holberton.h"
-#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/uio.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <stdlib.h>
 
 /**
  * main - check the code for Holberton School students.
@@ -11,24 +14,47 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-ssize_t i, j, k;
-char *buffer = NULL;
-if (filename == NULL)
-return (0);
-buffer = malloc(sizeof(char) * letters);
-if (buffer == NULL)
-return (0);
-i = open(filename, O_RDONLY);
-if (i == -1)
-return (free(buffer), 0);
-j = read(i, buffer, letters);
-if (j == -1)
-return (free(buffer), 0);
-buffer[letters] = '\0';
-k = write(STDOUT_FILENO, buffer, j);
-if (k == -1)
-return (free(buffer), 0);
-free(buffer);
-close(i);
-return (k);
+	int fd;
+	ssize_t r, w;
+	char *buf;
+
+	if (!filename)
+		return (0);
+
+	/* opens file with read + write permissions and checks for error */
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
+		return (0);
+
+	/* allocates buffer of size letters and checks for error */
+	buf = malloc(letters * sizeof(char));
+	if (!buf)
+		return (0);
+
+	/* reads text into buffer from file and checks for error */
+	r = read(fd, buf, letters);
+	if (r == -1)
+	{
+		free(buf);
+		return (0);
+	}
+
+	close(fd);
+
+	/* write to stdout from buffer and checks for error */
+	w = write(STDOUT_FILENO, buf, r);
+	if (w == -1)
+	{
+		free(buf);
+		return (0);
+	}
+
+	/* checks if write wrote the expected amount of bytes */
+	if (w < r)
+	{
+		free(buf);
+		return (0);
+	}
+	free(buf);
+	return (w);
 }
