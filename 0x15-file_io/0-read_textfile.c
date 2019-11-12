@@ -1,3 +1,4 @@
+#include "holberton.h"
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/uio.h>
@@ -9,7 +10,7 @@
  * read_textfile - fn
  * @filename: param
  * @letters: param
- * Return: int 
+ * Return: int
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
@@ -20,14 +21,14 @@ return (0);
 f = malloc(sizeof(char) * letters);
 if (f == NULL)
 return (0);
- i = -1;
+i = -1;
 i = open(filename, O_RDONLY);
 if (i < 0)
 {
 free(f);
 return (0);
 }
-j = read(i, f, letters);
+j = read(i, \0f, letters);
 if (j < 0)
 {
 free(f);
