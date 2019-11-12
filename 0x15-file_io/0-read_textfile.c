@@ -1,6 +1,8 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "holberton.h"
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
 
 /**
  * main - check the code for Holberton School students.
