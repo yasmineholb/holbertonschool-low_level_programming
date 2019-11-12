@@ -1,8 +1,4 @@
 #include "holberton.h"
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <sys/uio.h>
-#include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -28,7 +24,7 @@ if (i < 0)
 free(f);
 return (0);
 }
-j = read(i, \0f, letters);
+j = read(i, f, letters);
 if (j < 0)
 {
 free(f);
