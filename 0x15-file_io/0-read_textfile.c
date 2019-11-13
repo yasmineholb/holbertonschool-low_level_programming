@@ -20,11 +20,11 @@ return (0);
 j = read(i, f, letters);
 if (j == -1)
 return (0);
- while (f[k] != '\0')
+while (f[k] != '\0')
 k++;
 j = write(STDOUT_FILENO, f, k);
 if (j == -1)
 return (0);
- close(i);
+close(i);
 return (j);
 }
