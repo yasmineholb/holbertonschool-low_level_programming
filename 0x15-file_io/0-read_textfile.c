@@ -1,7 +1,4 @@
 #include "holberton.h"
-#include <fcntl.h>
-#include <stdlib.h>
-#include <stdio.h>
 /**
  * read_textfile - fn
  * @filename: param
@@ -10,32 +7,24 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-ssize_t i, j = 0, k = 0;
+int i, j = 0, k = 0;
 char *f;
 if (filename == NULL)
 return (0);
 f = malloc(sizeof(char) * letters);
 if (f == NULL)
 return (0);
-i = -1;
 i = open(filename, O_RDONLY);
-if (i < 0)
-{
-free(f);
+if (i == -1)
 return (0);
-}
 j = read(i, f, letters);
-if (j < 0)
-{
-free(f);
+if (j == -1)
 return (0);
-}
-while (f && f[k])
+ while (f[k] != '\0')
 k++;
 j = write(STDOUT_FILENO, f, k);
-free(f);
-close(i);
-if (j < 0)
+if (j == -1)
 return (0);
-return ((ssize_t)j);
+ close(i);
+return (j);
 }
