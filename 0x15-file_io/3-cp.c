@@ -1,9 +1,9 @@
 #include "holberton.h"
 int main(int argc, char *argv[])
 {
-int m, n, j, k;
-char b[1024];
 ssize_t num, v;
+char b[1024];
+int m, n, j, k;
 if (argc != 3)
 {
 dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
@@ -58,7 +58,7 @@ k = close(n);
 if (k == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", n);
-exit(99);
+exit(100);
 }
 return (0);
 }
