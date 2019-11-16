@@ -1,9 +1,14 @@
+/**
+*main - fn
+*@argc: arg
+*@argv: argv
+*/
 #include "holberton.h"
 int main(int argc, char *argv[])
 {
 ssize_t num, v;
 char b[1024];
-int m, n, j, k;
+int m, n, j, k, c;
 if (argc != 3)
 {
 dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
@@ -16,7 +21,8 @@ b[j] = 0;
 j++;
 }
 m = open(argv[1], O_RDONLY);
-if (m == -1)
+num = read(m, b, 1024);
+if (m == -1 || num == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",argv[1]);
 exit(98);
@@ -26,12 +32,6 @@ if (n == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't write to %s\n",argv[2]);
 exit(99);
-}
-num = read(m, b, 1024);
-if (num == -1)
-{
-dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",argv[1]);
-exit(98);
 }
 while (num)
 {		
@@ -48,16 +48,11 @@ dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 exit(98);
 }
 }
+c = close(n);
 k = close(m);
-if (k == -1)
+if (k == -1 || c == -1) 
 {
 dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", m);
-exit(100);
-}
-k = close(n);
-if (k == -1)
-{
-dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", n);
 exit(100);
 }
 return (0);
