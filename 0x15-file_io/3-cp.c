@@ -21,12 +21,14 @@ b[j] = 0;
 j++;
 }
 m = open(argv[1], O_RDONLY);
-num = read(m, b, 1024);
-if (m == -1 || num == -1)
+if (m == -1)
 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
 n = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 if (n == -1)
 dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
+num = read(m, b, 1024);
+if (num == -1)
+dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
 while (num)
 {
 v = write(n, b, num);
