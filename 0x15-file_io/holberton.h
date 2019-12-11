@@ -1,5 +1,5 @@
-#ifndef file
-#define file
+#ifndef holbertonh
+#define holbertonh
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdio.h>
