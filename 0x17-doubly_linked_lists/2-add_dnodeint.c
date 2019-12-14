@@ -17,6 +17,7 @@ if (new == NULL)
 return (NULL);
 new->n = n;
 new->next = *head;
+new->prev = NULL;
 *head = new;
 return (*head);
 }
