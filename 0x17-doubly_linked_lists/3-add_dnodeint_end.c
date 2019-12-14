@@ -23,12 +23,14 @@ if (*head == NULL)
 {
 new->prev = NULL;
 *head = new;
-return (*head);
+return (new);
 }
 s = *head;
 while (s->next)
+{
 s = s->next;
-s->prev = s;
+}
 s->next = new;
+s->prev = s;
 return (s);
 }
