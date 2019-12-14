@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
- **add_dnodeint - function.
+ *add_dnodeint_end - function.
  *@head: param
  *@n: param
  *Return: Return 0.
@@ -19,18 +19,16 @@ return (NULL);
 }
 new->n = n;
 new->next = NULL;
-new->prev =NULL;
 if (*head == NULL)
 {
+new->prev = NULL;
 *head = new;
+return (*head);
 }
-else
-{
 s = *head;
 while (s->next)
 s = s->next;
-new->prev = s;
+s->prev = s;
 s->next = new;
-}
-return (new);
+return (s);
 }
