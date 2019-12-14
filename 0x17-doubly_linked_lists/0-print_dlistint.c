@@ -14,7 +14,7 @@ const dlistint_t *m;
 size_t i = 0;
 for (m = h; m != NULL; m = m->next)
 {
-if (m->n)
+if (m->n &&  m != m->prev)
 printf("%d\n", m->n);
 i++;
 }
