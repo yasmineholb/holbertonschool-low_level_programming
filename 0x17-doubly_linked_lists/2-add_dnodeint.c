@@ -20,6 +20,10 @@ return (NULL);
 new->n = n;
 new->prev = NULL;
 new->next = *head;
+if (*head)
+{
+(*head)->prev = NULL;
+}
 *head = new;
 return (new);
 }
