@@ -13,7 +13,7 @@ h = malloc(sizeof(hash_table_t));
 if (!h)
 return (NULL);
 h->size = size;
-h->array = malloc(sizeof(hash_table_t) * size);
+h->array = malloc(sizeof(hash_table_t *) * size);
 if (!h->array)
 return (NULL);
 return (h);
