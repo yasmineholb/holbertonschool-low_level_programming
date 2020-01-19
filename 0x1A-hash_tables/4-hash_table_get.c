@@ -17,9 +17,10 @@ if (ht->array[m])
 t = ht->array[m];
 while(t)
 {
-if strcmp(t->key, key)
+if (strcmp(t->key, key))
 return(t->value);
 t=t->next;
 }
 }
+return(NULL);
 }
