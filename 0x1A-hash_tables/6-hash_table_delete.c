@@ -1,8 +1,8 @@
 #include "hash_tables.h"
 /**
- *hash_table_print - fn to get
+ *hash_table_delete - fn to delete
  *@ht: hash
- *Return: hash
+ *Return: void
  */
 void hash_table_delete(hash_table_t *ht)
 {
