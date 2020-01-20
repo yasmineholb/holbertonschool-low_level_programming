@@ -8,13 +8,13 @@ void hash_table_print(const hash_table_t *ht)
 {
 hash_node_t *t;
 unsigned long int i, k;
+k = 0;
 if (!ht)
 return;
 printf("{");
 for (i = 0; i < ht->size; i++)
 {
 t = ht->array[i];
-k = 0;
 while (t)
 {
 if (k > 0)
