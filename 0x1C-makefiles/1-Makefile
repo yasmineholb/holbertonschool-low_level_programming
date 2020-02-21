@@ -1,13 +1,5 @@
-CC = gcc Wall -W; \
+CC = gcc; \
 SRC = main.c holberton.c
 
-all: holberton; \
-
-holberton: main.o holberton.o; \
-    $(CC) -o holberton main.o holberton.o
-
-main.o: main.c m.h; \
-    $(CC) -o main.o -c main.c
-
-holberton.o: holberton.c; \
-    $(CC) -o holberton.o -c holberton.c
+all:$(SRC) ; \
+    $(CC) -Wall -Wextra $(SRC) -o holberton
