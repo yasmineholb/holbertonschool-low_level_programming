@@ -1,5 +1,5 @@
-CC = gcc; \
-SRC = main.c holberton.c
+CC=gcc
+SRC=holberton.c main.c
 
-all:$(SRC) ; \
-    $(CC) -Wall -Wextra $(SRC) -o holberton
+all: $(SRC)
+	$(CC) $(SRC) -o holberton
