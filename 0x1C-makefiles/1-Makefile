@@ -1,6 +1,5 @@
 CC = gcc; \
-SRC_DIR := src; \
-SRC := $(wildcard $(SRC_DIR)/*.c)
+SRC = main.c holberton.c
 
 all: holberton; \
 
@@ -8,7 +7,7 @@ holberton: main.o holberton.o; \
     $(CC) -o holberton main.o holberton.o
 
 main.o: $(SRC) m.h; \
-    $(CC) -o main.o -c main.c
+    $(CC) -o main.o -c $(SRC)
 
 holberton.o: $(SRC); \
-    $(CC) -o holberton.o -c holberton.c;
+    $(CC) -o holberton.o -c $(SRC);
