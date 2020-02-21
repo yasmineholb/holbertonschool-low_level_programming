@@ -1,6 +1,5 @@
 CC = gcc; \
-SRC_DIR := src; \
-SRC := $(wildcard $(SRC_DIR)/*.c)
+SRC := $(wildcard src/*.c)
 
 all: holberton; \
 
